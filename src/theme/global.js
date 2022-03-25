@@ -1,23 +1,24 @@
 import { createGlobalStyle } from "styled-components"
 
 import typography from "./variables/typography"
-import colour from "./variables/colours"
+import colours from "./variables/colours"
 import spacing from "./variables/spacing"
 
 const GlobalStyle = createGlobalStyle`
 	body {
-		background-color: ${colour.white};
+		background-color: ${colours.white};
 		font-family: ${typography.fontPrimary};
         font-weight: ${typography.fontWeightRegular};
 		font-size: ${typography.defaultFontSize};
 		line-height: ${typography.lineHeightDefault};
+		color: ${colours.blackText}
 	}
 
     a {
-        color: ${colour.blue};
+        color: ${colours.blue};
         &:active,
 		&:hover {
-			color: ${colour.darkBlue};
+			color: ${colours.darkBlue};
             text-decoration: underline;
 		}
     }
@@ -28,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 		border: 0;
 		padding: 0;
 		margin: ${spacing.spacing7} 0;
-		border-bottom: 4px solid ${colour.darkGrayText};
+		border-bottom: 4px solid ${colours.darkGrayText};
 	}
 `
 

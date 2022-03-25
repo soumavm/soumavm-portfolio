@@ -1,6 +1,6 @@
 export { default } from "./global"
-export { default as color } from "./variables/colors"
+export { default as colours } from "./variables/colours"
 export { default as spacing } from "./variables/spacing"
 export { default as typography } from "./variables/typography"
-export { default as icons } from "./icons"
+// export { default as icons } from "./icons"
 export { Heading1, Heading2, Heading3, Heading4, Heading5, Paragraph } from "./headings"
