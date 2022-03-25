@@ -5,7 +5,7 @@ const typography ={
     fontWeightRegular: 400,
     fontWeightSemiBold: 600,
     fontWeightBold: 700,
-    defaultFontSize: 16,
+    defaultFontSize: "16px",
     lineHeightXSmall: 1.2,
     lineHeightSmall: 1.4,
     lineHeightDefault: 1.6,
