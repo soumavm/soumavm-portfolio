@@ -1,5 +1,6 @@
+import "../../components/stylesheets/fonts.css"
 const typography ={
-    fontPrimary: 'Verdana, sans-serif',
+    fontPrimary: 'Work Sans',
     fontSecondary: 'Helvetica, sans-serif',
     fontWeightRegular: 400,
     fontWeightSemiBold: 600,
