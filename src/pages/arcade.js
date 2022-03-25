@@ -1,11 +1,11 @@
 import React from "react"
 
-const Page2 = () => {
+const Arcade = () => {
     return(
         <div>
-            <p>I am a page2</p>
+            <p>I am a Arcade</p>
         </div>
     )
 }
 
-export default Page2
+export default Arcade

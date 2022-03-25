@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { 
     StyledHeader, 
     StyledHeaderText, 
-    StyledMenuButton } from "./styles"
+    StyledLink,
+    StyledLinkList} from "./styles"
 
 
 const Header = () =>{
@@ -11,8 +12,13 @@ const Header = () =>{
         <>
             <StyledHeader>
                 <StyledHeaderText>Soumav Maiti</StyledHeaderText>
-                <NavLink to="Page2">Page2</NavLink>
-
+                <StyledLinkList>
+                    <StyledLink to="" activeClassName="selected" first={true}>Home</StyledLink>
+                    <StyledLink to="Software" activeClassName="selected" >Software</StyledLink>
+                    <StyledLink to="Hardware" activeClassName="selected" >Hardware</StyledLink>
+                    <StyledLink to="Mechanical" activeClassName="selected" >Mechanical</StyledLink>
+                    <StyledLink to="Arcade" activeClassName="selected">Arcade</StyledLink>
+                </StyledLinkList>
             </StyledHeader>
         </>
     )

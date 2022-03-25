@@ -1,4 +1,7 @@
 export { default as Homepage } from "./Homepage"
-export { default as Page2 } from "./page2"
-export { default as Page3 } from "./page3"
+export { default as Software } from "./software"
+export { default as Hardware } from "./hardware"
+export { default as Mechanical } from "./mechanical"
+export { default as Arcade } from "./arcade"
+
 export { default as NotFound } from "./404"
