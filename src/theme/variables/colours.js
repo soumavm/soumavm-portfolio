@@ -5,7 +5,7 @@ const colours = {
     blackText: "#202124",
     lightGrayText: "#5f6368",
     darkGrayText: "#202124",
-    grayHover: "#5f6368",
+    grayHover: "#2021240a",
     footerBG: "#f8f9fa"
 }
 

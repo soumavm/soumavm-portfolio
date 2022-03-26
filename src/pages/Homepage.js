@@ -3,7 +3,6 @@ import {PageBody, Column, Row, Heading1, Heading3} from "../theme"
 import Contact from "../components/contact"
 import ResumeLink from "../components/resumeLink"
 
-
 const Homepage = () => {
     return(
         <PageBody>
@@ -19,13 +18,13 @@ const Homepage = () => {
             </Row>
             <Row>
                 <Column count={3}>
-                    <ResumeLink title="Resume1" border={true}/>
+                    <ResumeLink title="Standard-Resume" border={true}/>
                 </Column>
                 <Column count={3}>
-                    <ResumeLink title="Resume2" border={true} />
+                    <ResumeLink title="Standard-Resume" border={true} />
                 </Column>
                 <Column count={3}>
-                    <ResumeLink title="Resume3" />
+                    <ResumeLink title="Standard-Resume" />
                 </Column>
             </Row>
             <hr />

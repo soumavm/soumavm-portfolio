@@ -16,8 +16,7 @@ export const Row = styled.div`
 
 export const Column = styled.div`
   ${(props) => `width: ${100/props.count}%;`}
-  padding-left: ${spacing.spacing4};
-  padding-right: ${spacing.spacing4};
+  padding: 0;
   display: flex;
   flex-direction: column;
 `

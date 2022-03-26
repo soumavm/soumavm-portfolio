@@ -34,8 +34,8 @@ export const StyledLink = styled(NavLink)`
     ${(props) => props.first && `margin-left: auto;`}
     
     &:hover{
-        color: #202124;
-        background-color: #2021240a;
+        color: ${colours.blackText};
+        background-color: ${colours.grayHover};
         text-decoration: none;
     }
 
