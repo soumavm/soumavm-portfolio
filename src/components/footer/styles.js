@@ -34,7 +34,6 @@ export const StyledRow= styled.div`
 export const StyledIcon = styled.a`
     margin: 0 ${spacing.spacing2} ${spacing.spacing4} ${spacing.spacing2};
     padding-top: ${spacing.spacing4};
-    color: none;
     width: 32px;
     height:32px;
 `

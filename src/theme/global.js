@@ -24,12 +24,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
 	hr {
-		width: 100%;
-		max-width: 48rem;
+		width: 75%;
+		max-width: 72rem;
 		border: 0;
-		padding: 0;
 		margin: ${spacing.spacing7} 0;
 		border-bottom: 1px solid ${colours.darkGrayText};
+		margin: auto;
 	}
 `
 
