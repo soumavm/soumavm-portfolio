@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 		border: 0;
 		padding: 0;
 		margin: ${spacing.spacing7} 0;
-		border-bottom: 4px solid ${colours.darkGrayText};
+		border-bottom: 1px solid ${colours.darkGrayText};
 	}
 `
 
