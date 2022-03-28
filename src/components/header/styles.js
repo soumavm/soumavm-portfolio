@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link, NavLink } from "react-router-dom";
-import { spacing, typography, colours, Heading1} from "../../theme"
+import { spacing, typography, colours } from "../../theme"
 
 export const StyledHeader = styled.header`
   position: relative;

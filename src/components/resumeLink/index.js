@@ -4,8 +4,8 @@ import { StyledDownload, StyledContainer } from "./styles"
 const ResumeLink = (props) =>{
     return(
         <StyledContainer border= {props.border}>
-            <StyledDownload href={`../../resources/${props.title}.pdf`} target="_blank">
-                {props.title}
+            <StyledDownload href={props.pdf} target="_blank">
+                {props.name}
             </StyledDownload>
         </StyledContainer>
         

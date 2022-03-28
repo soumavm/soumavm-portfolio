@@ -2,6 +2,9 @@ import React from "react"
 import {PageBody, Column, Row, Heading1, Heading3} from "../theme"
 import Contact from "../components/contact"
 import ResumeLink from "../components/resumeLink"
+import Section from "../components/section"
+
+import PDF from "../resources/Standard-Resume.pdf"
 
 const Homepage = () => {
     return(
@@ -18,20 +21,17 @@ const Homepage = () => {
             </Row>
             <Row>
                 <Column count={3}>
-                    <ResumeLink title="Standard-Resume" border={true}/>
+                    <ResumeLink pdf={PDF} name="Software Resume" border={true}/>
                 </Column>
                 <Column count={3}>
-                    <ResumeLink title="Standard-Resume" border={true} />
+                    <ResumeLink pdf={PDF} name="Hardware Resume" border={true} />
                 </Column>
                 <Column count={3}>
-                    <ResumeLink title="Standard-Resume" />
+                    <ResumeLink pdf={PDF} name="Mechanical Resume" />
                 </Column>
             </Row>
             <hr />
-            <Row>
-                
-                <p>hi</p>
-            </Row>
+            <Section />
             
         </PageBody>
     )

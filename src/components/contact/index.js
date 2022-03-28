@@ -17,8 +17,10 @@ const Contact = () =>{
             <StyledIcon href="https://www.linkedin.com/in/soumavm/">
                 {Linkedin}
             </StyledIcon>
-            <StyledIcon>
+            <StyledIcon href="tel:403-604-7416">
                 {Phone}
+                &nbsp;
+                <p>403-604-7416</p>
             </StyledIcon>
         </StyledRow>
     )

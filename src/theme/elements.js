@@ -7,7 +7,7 @@ export const PageBody = styled.div`
 `
 
 export const Row = styled.div`
-  margin: 0 auto;
+  margin: auto;
   max-width: 60rem;
   width: 100%;
   display: flex;

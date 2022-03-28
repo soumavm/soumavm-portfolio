@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: ${typography.fontWeightRegular};
 		font-size: ${typography.defaultFontSize};
 		line-height: ${typography.lineHeightDefault};
-		color: ${colours.blackText}
+		color: ${colours.blackText};
 	}
 
     a {
@@ -30,6 +30,18 @@ const GlobalStyle = createGlobalStyle`
 		margin: ${spacing.spacing7} 0;
 		border-bottom: 1px solid ${colours.darkGrayText};
 		margin: auto;
+	}
+	p{
+		background-color: ${colours.white};
+		font-family: ${typography.fontPrimary};
+        font-weight: ${typography.fontWeightRegular};
+		font-size: ${typography.defaultFontSize};
+		line-height: ${typography.lineHeightDefault};
+		color: ${colours.blackText};
+		margin: 0;
+		&.margin-top-1rem{
+			margin-top: ${spacing.spacing4}
+		}
 	}
 `
 

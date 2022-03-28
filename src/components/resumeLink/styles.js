@@ -5,7 +5,7 @@ export const StyledDownload = styled.a`
     padding: ${spacing.spacing4} 0 ${spacing.spacing4} 0;
     width: 100%;
     text-align: center;
-    color: ${colours.lightGrayText};
+    color: ${colours.blackText};
     font-size: 22px;
     text-decoration: underline;
     

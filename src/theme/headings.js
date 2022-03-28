@@ -1,6 +1,6 @@
-import { colours, spacing, typography } from "./index"
-import styled from "styled-components"
 import React from "react"
+import { typography } from "./index"
+import styled from "styled-components"
 
 export const Heading1 = styled.h1`
     font-size: 48px;
@@ -36,7 +36,4 @@ export const Heading5 = styled.h5`
     font-weight: ${typography.fontWeightRegular};
     line-height: ${typography.lineHeightMedium};
     margin: 0;
-`
-export const Paragraph = styled.p`
-
 `

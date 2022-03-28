@@ -8,6 +8,15 @@ export const StyledIcon = styled.a`
     ${(props) => props.first && `margin-left: 0 !important; `}
     margin: 0 ${spacing.spacing2} ${spacing.spacing4} ${spacing.spacing2};
     padding-top: ${spacing.spacing4};
-    width: 32px;
-    height:32px;
+    display: flex;
+    text-decoration: none !important;
+    p {
+        display: none;
+    }
+    &:hover{
+        p{
+            display: inline-block;
+            text-decoration: underline;
+        }
+    }
 `
