@@ -1,8 +1,8 @@
 import React from "react"
-import {PageBody, Column, Row, Heading1, Heading3} from "../theme"
-import Contact from "../components/contact"
+import { PageBody, Column, Row } from "../theme"
 import ResumeLink from "../components/resumeLink"
 import Section from "../components/section"
+import HomePageMain from "../components/homePageMain"
 
 import PDF from "../resources/Standard-Resume.pdf"
 
@@ -10,14 +10,7 @@ const Homepage = () => {
     return(
         <PageBody>
             <Row>
-                <Column count={2}>
-                    <p>I am an image</p>
-                </Column>
-                <Column count={2}>
-                    <Heading1>I am a Title</Heading1>
-                    <Heading3>I am a subtitle</Heading3>
-                    <Contact />
-                </Column>
+                <HomePageMain />
             </Row>
             <Row>
                 <Column count={3}>
@@ -31,7 +24,13 @@ const Homepage = () => {
                 </Column>
             </Row>
             <hr />
+            <Section title="About"/>
+            <hr />
             <Section />
+            <hr />
+            <Section />
+            <hr />
+            <Section title="hello"/>
             
         </PageBody>
     )

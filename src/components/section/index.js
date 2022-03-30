@@ -5,12 +5,12 @@ import {
 } from "./styles"
 import { Column, Row, Heading1, Heading3} from "../../theme"
 
-const Section = (props) =>{
+const Section = (props) => {
     return(
         <StyledContainer>
             <Row>
                 <Column count={2}>
-                    <Heading1>I am a Title</Heading1>
+                    <Heading1>{props.title}</Heading1>
                     <Heading3>I am a subtitle</Heading3>
                 </Column>
                 <Column count={2}>

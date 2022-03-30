@@ -27,9 +27,8 @@ const GlobalStyle = createGlobalStyle`
 		width: 75%;
 		max-width: 72rem;
 		border: 0;
-		margin: ${spacing.spacing7} 0;
+		margin: ${spacing.spacing7} auto;
 		border-bottom: 1px solid ${colours.darkGrayText};
-		margin: auto;
 	}
 	p{
 		background-color: ${colours.white};
