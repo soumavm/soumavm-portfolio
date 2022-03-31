@@ -10,11 +10,11 @@ const Header = () =>{
         <StyledHeader>
             <StyledHeaderText to="">Soumav Maiti</StyledHeaderText>
             <StyledLinkList>
-                <StyledLink to="" activeClassName="selected" first={"true"}>Home</StyledLink>
-                <StyledLink to="Software" activeClassName="selected" >Software</StyledLink>
-                <StyledLink to="Hardware" activeClassName="selected" >Hardware</StyledLink>
-                <StyledLink to="Mechanical" activeClassName="selected" >Mechanical</StyledLink>
-                <StyledLink to="Arcade" activeClassName="selected">Arcade</StyledLink>
+                <StyledLink to=""  first={"true"}>Home</StyledLink>
+                <StyledLink to="Software" >Software</StyledLink>
+                <StyledLink to="Hardware" >Hardware</StyledLink>
+                <StyledLink to="Mechanical" >Mechanical</StyledLink>
+                <StyledLink to="Arcade" >Arcade</StyledLink>
             </StyledLinkList>
         </StyledHeader>
     )

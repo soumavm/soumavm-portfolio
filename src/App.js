@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route
-} from "react-router-dom";
+} from "react-router-dom"
 
-import {Homepage, Software, Hardware, Mechanical, Arcade, NotFound} from "./pages";
+import {Homepage, Software, Hardware, Mechanical, Arcade, NotFound} from "./pages"
 import GlobalStyle from "./theme"
 import Header from "../src/components/header"
 import Footer from "../src/components/footer"
@@ -34,10 +34,7 @@ function App() {
         <Footer />
       </Router>
     </>
-    
-    
-
-  );
+  )
 }
 
-export default App;
+export default App

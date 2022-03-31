@@ -11,11 +11,11 @@ const Section = (props) => {
             <Row>
                 <Column count={2}>
                     <Heading1>{props.title}</Heading1>
-                    <Heading3>I am a subtitle</Heading3>
+                    <Heading3>{props.subtitle}</Heading3>
                 </Column>
                 <Column count={2}>
-                    <p className="margin-top-1rem">I am a brief description lorem ipsum blah blah</p>
-                    <StyledLink to="/Software">Software</StyledLink>
+                    <p className="margin-top-1rem">{props.description}</p>
+                    <StyledLink to={`/${props.link}`}>Go to Page</StyledLink>
                 </Column>
                 
             </Row>
