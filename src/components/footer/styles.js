@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-import { spacing, typography, colours, Heading1} from "../../theme"
+import { spacing, typography, colours } from "../../theme"
 
 export const StyledFooter = styled.footer`
   height: 10rem;
@@ -34,7 +34,6 @@ export const StyledRow= styled.div`
 export const StyledIcon = styled.a`
     margin: 0 ${spacing.spacing2} ${spacing.spacing4} ${spacing.spacing2};
     padding-top: ${spacing.spacing4};
-    color: none;
     width: 32px;
     height:32px;
 `

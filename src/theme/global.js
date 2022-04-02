@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: ${typography.fontWeightRegular};
 		font-size: ${typography.defaultFontSize};
 		line-height: ${typography.lineHeightDefault};
-		color: ${colours.blackText}
+		color: ${colours.blackText};
 	}
 
     a {
@@ -24,12 +24,23 @@ const GlobalStyle = createGlobalStyle`
     }
 
 	hr {
-		width: 100%;
-		max-width: 48rem;
+		width: 75%;
+		max-width: 72rem;
 		border: 0;
-		padding: 0;
-		margin: ${spacing.spacing7} 0;
+		margin: ${spacing.spacing7} auto;
 		border-bottom: 1px solid ${colours.darkGrayText};
+	}
+	p {
+		background-color: ${colours.white};
+		font-family: ${typography.fontPrimary};
+        font-weight: ${typography.fontWeightRegular};
+		font-size: ${typography.defaultFontSize};
+		line-height: ${typography.lineHeightDefault};
+		color: ${colours.blackText};
+		margin: 0;
+		&.margin-top-1rem{
+			margin-top: ${spacing.spacing4}
+		}
 	}
 `
 

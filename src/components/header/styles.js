@@ -1,12 +1,17 @@
 import styled from "styled-components"
 import { Link, NavLink } from "react-router-dom";
-import { spacing, typography, colours, Heading1} from "../../theme"
+import { spacing, typography, colours } from "../../theme"
 
 export const StyledHeader = styled.header`
   position: relative;
   display: flex;
   align-items: center;
   height: 5.75rem;
+  position: sticky;
+  top: 0;
+  background-color:${colours.white};
+  border-bottom: 2px solid ${colours.grayHover};
+
 `
 export const StyledHeaderText = styled(Link)`
     margin-left: ${spacing.spacing9};
@@ -34,8 +39,8 @@ export const StyledLink = styled(NavLink)`
     ${(props) => props.first && `margin-left: auto;`}
     
     &:hover{
-        color: #202124;
-        background-color: #2021240a;
+        color: ${colours.blackText};
+        background-color: ${colours.grayHover};
         text-decoration: none;
     }
 

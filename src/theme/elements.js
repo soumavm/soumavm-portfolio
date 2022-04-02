@@ -1,17 +1,22 @@
 import styled from "styled-components"
-import { color, spacing, typography } from "./index"
+import { spacing } from "./index"
 
-export const Row = styled.div`
-  margin: 0 auto;
-  max-width: 60rem;
-  width: 100%;
+export const PageBody = styled.div`
   display: flex;
   flex-direction: column;
 `
 
-export const Column = styled.div`
-  ${(props) => `width: ${100/props.count}%`}
+export const Row = styled.div`
+  margin: auto;
+  max-width: 60rem;
   width: 100%;
-  padding-left: ${spacing.spacing4};
-  padding-right: ${spacing.spacing4};
+  display: flex;
+  flex-direction: row;
+`
+
+export const Column = styled.div`
+  ${(props) => `width: ${100/props.count}%;`}
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 `
