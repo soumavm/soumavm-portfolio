@@ -1,10 +1,14 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
+import { PageBody, Column, Row } from "../theme"
 
-const Mechanical = () => {
+import PDF from "../resources/Standard-Resume.pdf"
+import { collection, getDocs } from "firebase/firestore"
+
+const Mechanical= () => {
     return(
-        <div>
-            <p>I am a Mechanical</p>
-        </div>
+        <PageBody>
+            <Row></Row>
+        </PageBody>
     )
 }
 

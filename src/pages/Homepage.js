@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { PageBody, Column, Row } from "../theme"
+
 import ResumeLink from "../components/resumeLink"
 import Section from "../components/section"
 import HomePageMain from "../components/homePageMain"
@@ -15,7 +16,7 @@ const Homepage = ({db}) => {
         const getData = async () => {
             const querySnapshot = await getDocs(collection(db, "homePage"))
             querySnapshot.forEach((doc) => {
-                if(doc.id == "frontpage"){
+                if(doc.id === "frontpage"){
                     setfrontpageData(doc.data())
                 }
                 else{

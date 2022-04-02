@@ -7,6 +7,11 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   height: 5.75rem;
+  position: sticky;
+  top: 0;
+  background-color:${colours.white};
+  border-bottom: 2px solid ${colours.grayHover};
+
 `
 export const StyledHeaderText = styled(Link)`
     margin-left: ${spacing.spacing9};

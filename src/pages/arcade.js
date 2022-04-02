@@ -1,10 +1,14 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
+import { PageBody, Column, Row } from "../theme"
+
+import PDF from "../resources/Standard-Resume.pdf"
+import { collection, getDocs } from "firebase/firestore"
 
 const Arcade = () => {
     return(
-        <div>
-            <p>I am a Arcade</p>
-        </div>
+        <PageBody>
+            <Row></Row>
+        </PageBody>
     )
 }
 
