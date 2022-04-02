@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 		margin: ${spacing.spacing7} auto;
 		border-bottom: 1px solid ${colours.darkGrayText};
 	}
-	p{
+	p {
 		background-color: ${colours.white};
 		font-family: ${typography.fontPrimary};
         font-weight: ${typography.fontWeightRegular};

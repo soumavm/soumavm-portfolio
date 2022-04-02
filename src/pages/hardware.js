@@ -9,6 +9,7 @@ const Hardware = () => {
         <PageBody>
             <Row></Row>
         </PageBody>
+
     )
 }
 
