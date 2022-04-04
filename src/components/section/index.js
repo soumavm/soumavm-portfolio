@@ -15,7 +15,7 @@ const Section = (props) => {
                 </Column>
                 <Column count={2}>
                     <p className="margin-top-1rem">{props.description}</p>
-                    <StyledLink to={`/${ props.link && props.link}`}>Go to Page</StyledLink>
+                    {props.link && <StyledLink to={`/${props.link}`}>Go to Page</StyledLink>}
                 </Column>
                 
             </Row>
