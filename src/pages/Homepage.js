@@ -51,10 +51,11 @@ const Homepage = ({db}) => {
                 
                 {sectionData.map((data) => {
                     return(
-                        <>
+                        <React.Fragment key={`${data.Title} Section`}>
                             <hr />
-                            <Section title = {data.Title} subtitle={data.Subtitle} link = {data.Link} description = {data.Description} key={`${data.Title} Section`}/>
-                        </>
+                            <Section title = {data.Title} subtitle={data.Subtitle} link = {data.Link} description = {data.Description} />
+                        </React.Fragment>
+    
                     )
                 })}
             </PageBody>

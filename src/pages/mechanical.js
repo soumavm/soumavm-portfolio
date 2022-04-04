@@ -42,12 +42,12 @@ const Mechanical= ({db}) => {
                 <hr />
                 {projectData.map((data) => {
                     return(
-                        <>
+                        <React.Fragment key={`${data.Title} Project`}>
                             <Row>
-                                <ProjectMain data={data} key={`${data.Title} Project`}/>
+                                <ProjectMain data={data} />
                             </Row>
                             <ProjectImage key={`${data.Title} Images`} />
-                        </>
+                        </React.Fragment>
                     )
                 })
 
