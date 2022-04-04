@@ -24,9 +24,9 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/Software" element={<Software />}> </Route>
-          <Route path="/Hardware" element={ <Hardware />}></Route>
-          <Route path="/Mechanical" element={ <Mechanical />}></Route>
+          <Route path="/Software" element={<Software db = {db}/>}> </Route>
+          <Route path="/Hardware" element={ <Hardware db = {db}/>}></Route>
+          <Route path="/Mechanical" element={ <Mechanical db = {db}/>}></Route>
           <Route path="/Arcade" element={ <Arcade />}></Route>
           <Route path="/" element={<Homepage db = {db}/>}></Route>
           <Route path="*" element={<NotFound />}></Route>
