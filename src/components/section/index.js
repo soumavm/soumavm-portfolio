@@ -1,7 +1,8 @@
 import React from "react"
 import { 
     StyledContainer,
-    StyledLink
+    StyledLink,
+    StyledImage
 } from "./styles"
 import { Column, Row, Heading1, Heading3} from "../../theme"
 
@@ -20,7 +21,7 @@ const Section = (props) => {
                 
             </Row>
             <Row>
-                <p>I am an image</p>
+                {props.src && <StyledImage src={require(`../../images/${props.src}.png`)} alt={props.alt} />}
             </Row>
         </StyledContainer>
 

@@ -12,6 +12,8 @@ const Homepage = ({db}) => {
     let [loading, setLoading] = useState(true)
     let [sectionData, setSectionData] = useState([])
     let [frontpageData, setfrontpageData] = useState({})
+    let [sortData, setSortData] = useState(false)
+
     useEffect(() => {
         const getData = async () => {
             const querySnapshot = await getDocs(collection(db, "homePage"))
@@ -27,6 +29,15 @@ const Homepage = ({db}) => {
         }
         getData()
     }, [])
+    
+    const sortMyData = () => {
+        if(!sortData){
+            const myData = [].concat(sectionData)
+            .sort((a, b) => a.Order > b.Order ? 1 : -1)
+            setSectionData(myData)
+            setSortData(true)
+        }
+    }
 
     if(loading){
         return  <p>hi i'm loading</p>
@@ -48,14 +59,14 @@ const Homepage = ({db}) => {
                         <ResumeLink pdf={PDF} name="Mechanical Resume" />
                     </Column>
                 </Row>
-                
-                {sectionData.map((data) => {
+                {sectionData.length && sortMyData()}
+                {sectionData.length && 
+                sectionData.map((data) => {
                     return(
                         <React.Fragment key={`${data.Title} Section`}>
                             <hr />
-                            <Section title = {data.Title} subtitle={data.Subtitle} link = {data.Link} description = {data.Description} />
+                            <Section title = {data.Title} subtitle={data.Subtitle} link = {data.Link} description = {data.Description} src={data.Src} alt={data.Alt} />
                         </React.Fragment>
-    
                     )
                 })}
             </PageBody>
