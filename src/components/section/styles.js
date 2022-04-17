@@ -10,6 +10,13 @@ export const StyledContainer= styled.div`
 
 export const StyledLink = styled(Link)`
     margin: ${spacing.spacing2} 0 0 0;
-    color: ${colours.darkGrayText}
+    color: ${colours.darkGrayText};
+`
+
+export const StyledImage = styled.img`
+    margin-top: ${spacing.spacing7};
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60rem;
 `
 

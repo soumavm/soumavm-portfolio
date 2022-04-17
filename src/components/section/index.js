@@ -1,7 +1,8 @@
 import React from "react"
 import { 
     StyledContainer,
-    StyledLink
+    StyledLink,
+    StyledImage
 } from "./styles"
 import { Column, Row, Heading1, Heading3} from "../../theme"
 
@@ -15,12 +16,12 @@ const Section = (props) => {
                 </Column>
                 <Column count={2}>
                     <p className="margin-top-1rem">{props.description}</p>
-                    <StyledLink to={`/${ props.link && props.link}`}>Go to Page</StyledLink>
+                    {props.link && <StyledLink to={`/${props.link}`}>Go to Page</StyledLink>}
                 </Column>
                 
             </Row>
             <Row>
-                <p>I am an image</p>
+                {props.src && <StyledImage src={require(`../../images/${props.src}.png`)} alt={props.alt} />}
             </Row>
         </StyledContainer>
 
