@@ -14,6 +14,7 @@ export const StyledLink = styled(Link)`
 `
 
 export const StyledImage = styled.img`
+    margin-top: ${spacing.spacing7};
     margin-left: auto;
     margin-right: auto;
     max-width: 60rem;

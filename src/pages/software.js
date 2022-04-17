@@ -7,11 +7,15 @@ import { collection, getDocs } from "firebase/firestore"
 import ProjectMain from "../components/projectMain"
 import ProjectImage from "../components/projectImage"
 
+import sortData from "../resources/utils"
+
 const Software= ({db}) => {
     let [loading, setLoading] = useState(true)
     let [projectData, setProjectData] = useState([])
     let [mainData, setMainData] = useState({})
     let [conclusionData, setConclusionData] = useState({})
+    let [sortedData, setSortData] = useState(false)
+
     useEffect(() => {
         const getData = async () => {
             const querySnapshot = await getDocs(collection(db, "Software"))
@@ -30,6 +34,7 @@ const Software= ({db}) => {
         }
         getData()
     }, [])
+
     if(loading){
         return  <p>hi i'm loading</p>
     }
@@ -40,6 +45,7 @@ const Software= ({db}) => {
                     <ProjectMain data = {mainData}/>
                 </Row>
                 <hr />
+                {projectData.length && sortData(sortedData, projectData, setProjectData, setSortData)}
                 {projectData.map((data) => {
                     return(
                         <React.Fragment key={`${data.Title} Project`}>
@@ -49,9 +55,7 @@ const Software= ({db}) => {
                             <ProjectImage key={`${data.Title} Images`} />
                         </React.Fragment>
                     )
-                })
-
-                }
+                })}
                 <Row>
                     <ProjectMain data = {conclusionData}/>
                 </Row>
