@@ -11,7 +11,7 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
 `
 export const StyledHeaderText = styled(Link)`
-    margin-left: ${spacing.spacing9};
+    margin-left: ${spacing.spacing10};
     font-size: 48px;
     letter-spacing: ${typography.letterSpacingLarge};
     font-weight: ${typography.fontWeightRegular};

@@ -3,7 +3,7 @@ import { spacing, colours } from "../../theme"
 
 export const StyledContainer = styled.div`
   margin: ${spacing.spacing6} 0 ${spacing.spacing6} 0;
-  height: 40rem;
+  height: 30rem;
   background-color: ${colours.footerBG};
   justify-content: center;
   text-align: center;

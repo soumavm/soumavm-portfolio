@@ -8,7 +8,8 @@ const spacing = {
     spacing6: "2rem", // 32px
     spacing7: "2.5rem", // 40px
     spacing8: "3rem", // 48px
-    spacing9: "4rem", // 64px
+    spacing9: "3.5rem", //56px
+    spacing10: "4rem", // 64px
   }
 
 export default spacing

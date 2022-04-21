@@ -14,7 +14,7 @@ export const StyledHeader = styled.header`
 
 `
 export const StyledHeaderText = styled(Link)`
-    margin-left: ${spacing.spacing9};
+    margin-left: ${spacing.spacing10};
     width: 55%;
     font-size: 48px;
     letter-spacing: ${typography.letterSpacingLarge};
@@ -52,5 +52,5 @@ export const StyledLink = styled(NavLink)`
 
 export const StyledLinkList = styled.div`
     width: 45%;
-    margin-right: ${spacing.spacing9};
+    margin-right: ${spacing.spacing10};
 `

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react"
-import { PageBody, Column, Row } from "../theme"
+import { PageBody, Row } from "../theme"
 
-import PDF from "../resources/Standard-Resume.pdf"
 import { collection, getDocs } from "firebase/firestore"
 
 import ProjectMain from "../components/projectMain"
 import ProjectImage from "../components/projectImage"
 
 import sortData from "../resources/utils"
+import Loading from "./loading"
 
 const Software= ({db}) => {
     let [loading, setLoading] = useState(true)
@@ -36,13 +36,13 @@ const Software= ({db}) => {
     }, [])
 
     if(loading){
-        return  <p>hi i'm loading</p>
+        return  <Loading />
     }
     else{
         return(
             <PageBody>
                 <Row>
-                    <ProjectMain data = {mainData}/>
+                    <ProjectMain data = {mainData} title={true}/>
                 </Row>
                 <hr />
                 {projectData.length && sortData(sortedData, projectData, setProjectData, setSortData)}

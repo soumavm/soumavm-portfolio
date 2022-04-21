@@ -7,7 +7,9 @@ import { collection, getDocs } from "firebase/firestore"
 const Arcade = () => {
     return(
         <PageBody>
-            <Row></Row>
+            <Row>
+                <h1>WIP!</h1>
+            </Row>
         </PageBody>
     )
 }

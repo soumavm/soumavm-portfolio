@@ -7,6 +7,7 @@ import HomePageMain from "../components/homePageMain"
 
 import PDF from "../resources/Standard-Resume.pdf"
 import { collection, getDocs } from "firebase/firestore"
+import Loading from "./loading"
 
 const Homepage = ({db}) => {
     let [loading, setLoading] = useState(true)
@@ -40,7 +41,7 @@ const Homepage = ({db}) => {
     }
 
     if(loading){
-        return  <p>hi i'm loading</p>
+        return <Loading />
     }
     else{
         return(
