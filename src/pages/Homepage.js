@@ -25,7 +25,7 @@ const Homepage = ({db}) => {
             const sectionSnapshot = await getDocs(q2)
 
             topicSnapshot.forEach((doc) => {
-                setfrontpageData(frontPageData => [...frontPageData, doc.data()])
+                setfrontpageData(doc.data())
             })
             sectionSnapshot.forEach((doc) => {
                 setSectionData(sectionData => [...sectionData, doc.data()])
