@@ -3,8 +3,7 @@ import { spacing, colours } from "../../theme"
 
 export const StyledContainer = styled.div`
   margin: ${spacing.spacing6} 0 ${spacing.spacing6} 0;
-  height: 30rem;
-  background-color: ${colours.footerBG};
+  background-color: ${colours.imageBG};
   justify-content: center;
   text-align: center;
   display: flex;
@@ -12,5 +11,7 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledImage = styled.img`
-    margin-top: ${spacing.spacing3};
+    width: 100%;
+    max-width: 60rem;
+    margin: ${spacing.spacing7} auto ${spacing.spacing7} auto;
 `

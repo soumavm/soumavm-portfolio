@@ -8,7 +8,7 @@ export const StyledImage = styled.img`
 export const StyledHeading =styled(Heading1)`
     margin: ${spacing.spacing3} 0 ${spacing.spacing3} 0;
     line-height: ${typography.lineHeightSmall};
-    ${props => props.title && `margin-top: ${spacing.spacing7}`}
+    ${props => props.Title && `margin-top: ${spacing.spacing7}`}
 `
 
 export const StyledIcon = styled.div`

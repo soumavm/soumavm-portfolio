@@ -15,7 +15,7 @@ const ProjectMain = ({data, title, last}) => {
             <Row>
                 <StyledIcon></StyledIcon>
                 <Column count={1}>
-                    <StyledHeading title={true}>{data.Title}</StyledHeading>
+                    <StyledHeading Title={title}>{data.Title}</StyledHeading>
                     <Heading4>{data.Subtitle}</Heading4>
                 </Column>
             </Row>

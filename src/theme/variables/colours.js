@@ -6,7 +6,8 @@ const colours = {
     lightGrayText: "#5f6368",
     darkGrayText: "#202124",
     grayHover: "#2021240a",
-    footerBG: "#f8f9fa"
+    footerBG: "#f8f9fa",
+    imageBG: "#e9edf0"
 }
 
 export default colours

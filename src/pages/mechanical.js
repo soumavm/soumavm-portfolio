@@ -50,7 +50,7 @@ const Mechanical= ({db}) => {
                             <Row>
                                 <ProjectMain data={data} />
                             </Row>
-                            <ProjectImage key={`${data.Title} Images`} />
+                            {data.Src && <ProjectImage key={`${data.Title} Images`} src={require(`../images/hardware/${data.Src}.png`)} alt={data.Alt} />}
                         </React.Fragment>
                     )
                 })}
