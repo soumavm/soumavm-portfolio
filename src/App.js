@@ -1,6 +1,6 @@
 import React from "react"
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Routes,
   Route
 } from "react-router-dom"
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/Software" element={<Software db = {db}/>}> </Route>
@@ -32,7 +32,7 @@ function App() {
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
-      </Router>
+      </HashRouter>
     </>
   )
 }
