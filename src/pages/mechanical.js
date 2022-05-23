@@ -6,30 +6,29 @@ import { collection, getDocs } from "firebase/firestore"
 import ProjectMain from "../components/projectMain"
 import ProjectImage from "../components/projectImage"
 
-import sortData from "../resources/utils"
 import Loading from "./loading"
+import { query, orderBy} from "firebase/firestore";  
 
 const Mechanical= ({db}) => {
     let [loading, setLoading] = useState(true)
     let [projectData, setProjectData] = useState([])
-    let [mainData, setMainData] = useState({})
-    let [conclusionData, setConclusionData] = useState({})
-    let [sortedData, setSortData] = useState(false)
+    let [topicData, setTopicData] = useState([])
 
     useEffect(() => {
+
         const getData = async () => {
-            const querySnapshot = await getDocs(collection(db, "Mechanical"))
-            querySnapshot.forEach((doc) => {
-                if(doc.id === "Main"){
-                    setMainData(doc.data())
-                }
-                else if(doc.id === "Conclusion"){
-                    setConclusionData(doc.data())
-                }
-                else{
-                    setProjectData(projectData => [...projectData, doc.data()])
-                }
+            const q1 = query(collection(db, "Mechanical"), orderBy("TopicOrder", "asc"))
+            const topicSnapshot = await getDocs(q1)
+            const q2 = query(collection(db, "Mechanical"), orderBy("Order", "asc"));
+            const projectSnapshot = await getDocs(q2)
+
+            topicSnapshot.forEach((doc) => {
+                setTopicData(topicData => [...topicData, doc.data()])
             })
+            projectSnapshot.forEach((doc) => {
+                setProjectData(projectData => [...projectData, doc.data()])
+            })
+
             setLoading(false)
         }
         getData()
@@ -42,10 +41,9 @@ const Mechanical= ({db}) => {
         return(
             <PageBody>
                 <Row>
-                    <ProjectMain data = {mainData} title={true}/>
+                    <ProjectMain data = {topicData[0]} title={true}/>
                 </Row>
                 <hr />
-                {projectData.length && sortData(sortedData, projectData, setProjectData, setSortData)}
                 {projectData.map((data) => {
                     return(
                         <React.Fragment key={`${data.Title} Project`}>
@@ -57,7 +55,7 @@ const Mechanical= ({db}) => {
                     )
                 })}
                 <Row>
-                    <ProjectMain data = {conclusionData}/>
+                    <ProjectMain data = {topicData[1]} last={true}/>
                 </Row>
             </PageBody>
         )

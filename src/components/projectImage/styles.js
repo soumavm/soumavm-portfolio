@@ -10,3 +10,7 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const StyledImage = styled.img`
+    margin-top: ${spacing.spacing3};
+`

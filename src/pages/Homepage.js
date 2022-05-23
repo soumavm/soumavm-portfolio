@@ -5,40 +5,36 @@ import ResumeLink from "../components/resumeLink"
 import Section from "../components/section"
 import HomePageMain from "../components/homePageMain"
 
-import PDF from "../resources/Standard-Resume.pdf"
+import HardwarePDF from "../resources/Hardware Resume.pdf"
+import SoftwarePDF from "../resources/Software Resume.pdf"
 import { collection, getDocs } from "firebase/firestore"
 import Loading from "./loading"
+import { query, orderBy} from "firebase/firestore";  
 
 const Homepage = ({db}) => {
     let [loading, setLoading] = useState(true)
     let [sectionData, setSectionData] = useState([])
     let [frontpageData, setfrontpageData] = useState({})
-    let [sortData, setSortData] = useState(false)
 
     useEffect(() => {
+
         const getData = async () => {
-            const querySnapshot = await getDocs(collection(db, "homePage"))
-            querySnapshot.forEach((doc) => {
-                if(doc.id === "frontpage"){
-                    setfrontpageData(doc.data())
-                }
-                else{
-                    setSectionData(sectionData => [...sectionData, doc.data()])
-                }
+            const q1 = query(collection(db, "homePage"), orderBy("TopicOrder", "asc"))
+            const topicSnapshot = await getDocs(q1)
+            const q2 = query(collection(db, "homePage"), orderBy("Order", "asc"));
+            const sectionSnapshot = await getDocs(q2)
+
+            topicSnapshot.forEach((doc) => {
+                setfrontpageData(frontPageData => [...frontPageData, doc.data()])
             })
+            sectionSnapshot.forEach((doc) => {
+                setSectionData(sectionData => [...sectionData, doc.data()])
+            })
+
             setLoading(false)
         }
         getData()
     }, [])
-    
-    const sortMyData = () => {
-        if(!sortData){
-            const myData = [].concat(sectionData)
-            .sort((a, b) => a.Order > b.Order ? 1 : -1)
-            setSectionData(myData)
-            setSortData(true)
-        }
-    }
 
     if(loading){
         return <Loading />
@@ -51,16 +47,15 @@ const Homepage = ({db}) => {
                 </Row>
                 <Row>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Software Resume" border={true}/>
+                        <ResumeLink pdf={SoftwarePDF} name="Software Resume" border={true}/>
                     </Column>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Hardware Resume" border={true} />
+                        <ResumeLink pdf={HardwarePDF} name="Hardware Resume" border={true} />
                     </Column>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Mechanical Resume" />
+                        <ResumeLink pdf={HardwarePDF} name="Mechanical Resume" />
                     </Column>
                 </Row>
-                {sectionData.length && sortMyData()}
                 {sectionData.length && 
                 sectionData.map((data) => {
                     return(
