@@ -9,6 +9,7 @@ import HardwarePDF from "../resources/Hardware Resume.pdf"
 import SoftwarePDF from "../resources/Software Resume.pdf"
 import { collection, getDocs } from "firebase/firestore"
 import Loading from "./loading"
+import { query, orderBy} from "firebase/firestore";  
 
 const Homepage = ({db}) => {
     let [loading, setLoading] = useState(true)
@@ -24,7 +25,7 @@ const Homepage = ({db}) => {
             const sectionSnapshot = await getDocs(q2)
 
             topicSnapshot.forEach((doc) => {
-                setTopicData(topicData => [...topicData, doc.data()])
+                setfrontpageData(frontPageData => [...frontPageData, doc.data()])
             })
             sectionSnapshot.forEach((doc) => {
                 setSectionData(sectionData => [...sectionData, doc.data()])
