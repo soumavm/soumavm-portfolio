@@ -1,9 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.35b6a48e.css",
-    "main.js": "/static/js/main.e98d7a22.js",
-    "static/media/Standard-Resume.pdf": "/static/media/Standard-Resume.ee7e51296935f4f39cae.pdf",
+    "main.js": "/static/js/main.790b9293.js",
+    "static/media/Hardware Resume.pdf": "/static/media/Hardware Resume.65a991bf11eb92a0f68a.pdf",
+    "static/media/Software Resume.pdf": "/static/media/Software Resume.25f78497f477632379cc.pdf",
     "static/media/WorkSans-Light.ttf": "/static/media/WorkSans-Light.fae86bcccc13a61c303f.ttf",
+    "static/media/28Pins.png": "/static/media/28Pins.39bebf4cb0ad8265a892.png",
+    "static/media/HardwareImage.png": "/static/media/HardwareImage.2a7b6965fe2eb83ef862.png",
     "static/media/MechanicalImage.png": "/static/media/MechanicalImage.1d1a977e57839d3ae8bb.png",
     "static/media/AboutImage.png": "/static/media/AboutImage.83e38fef0ef279363f43.png",
     "static/media/SoftwareImage.png": "/static/media/SoftwareImage.112870e50c0810481f27.png",
@@ -11,10 +14,10 @@
     "static/media/homePageImage.png": "/static/media/homePageImage.1d64ec49dcac7c253176.png",
     "index.html": "/index.html",
     "main.35b6a48e.css.map": "/static/css/main.35b6a48e.css.map",
-    "main.e98d7a22.js.map": "/static/js/main.e98d7a22.js.map"
+    "main.790b9293.js.map": "/static/js/main.790b9293.js.map"
   },
   "entrypoints": [
     "static/css/main.35b6a48e.css",
-    "static/js/main.e98d7a22.js"
+    "static/js/main.790b9293.js"
   ]
 }
