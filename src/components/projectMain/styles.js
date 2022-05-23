@@ -19,3 +19,7 @@ export const StyledIcon = styled.div`
     margin: ${spacing.spacing9} ${spacing.spacing4} 0 -${spacing.spacing6};
 `
 
+export const StyledCol = styled(Column)`
+    ${props => props.last && `margin-bottom: ${spacing.spacing10}`}
+`
+

@@ -14,8 +14,7 @@ import { query, orderBy} from "firebase/firestore";
 const Software= ({db}) => {
     let [loading, setLoading] = useState(true)
     let [projectData, setProjectData] = useState([])
-    let [mainData, setMainData] = useState({})
-    let [conclusionData, setConclusionData] = useState({})
+    let [topicData, setTopicData] = useState([])
 
     useEffect(() => {
 
@@ -26,12 +25,7 @@ const Software= ({db}) => {
             const projectSnapshot = await getDocs(q2)
 
             topicSnapshot.forEach((doc) => {
-                if(doc.id === "Main"){
-                    setMainData(doc.data())
-                }
-                else{
-                    setConclusionData(doc.data())
-                }
+                setTopicData(topicData => [...topicData, doc.data()])
             })
             projectSnapshot.forEach((doc) => {
                 setProjectData(projectData => [...projectData, doc.data()])
@@ -49,7 +43,7 @@ const Software= ({db}) => {
         return(
             <PageBody>
                 <Row>
-                    <ProjectMain data = {mainData} title={true}/>
+                    <ProjectMain data = {topicData[0]} title={true}/>
                 </Row>
                 <hr />
                 {projectData.map((data) => {
@@ -63,7 +57,7 @@ const Software= ({db}) => {
                     )
                 })}
                 <Row>
-                    <ProjectMain data = {conclusionData}/>
+                    <ProjectMain data = {topicData[1]} last={true}/>
                 </Row>
             </PageBody>
         )

@@ -4,14 +4,14 @@ import { Column, Row, Heading4 } from "../../theme"
 import { 
     StyledImage,
     StyledHeading,
-    StyledIcon
+    StyledIcon,
+    StyledCol
 }
 from "./styles"
 
-const ProjectMain = ({data, title}) => {
+const ProjectMain = ({data, title, last}) => {
     if(title){
         return(
-            <>
             <Row>
                 <StyledIcon></StyledIcon>
                 <Column count={1}>
@@ -19,15 +19,13 @@ const ProjectMain = ({data, title}) => {
                     <Heading4>{data.Subtitle}</Heading4>
                 </Column>
             </Row>
-                
-            </>
         )
     }
     else return(
-        <Column count={1}>
+        <StyledCol count={1} last={last}>
             <StyledHeading>{data.Title}</StyledHeading>
             <Heading4>{data.Subtitle}</Heading4>
-        </Column>
+        </StyledCol>
         
     )
 }
