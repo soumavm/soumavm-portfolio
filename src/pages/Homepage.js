@@ -5,7 +5,8 @@ import ResumeLink from "../components/resumeLink"
 import Section from "../components/section"
 import HomePageMain from "../components/homePageMain"
 
-import PDF from "../resources/Standard-Resume.pdf"
+import HardwarePDF from "../resources/Hardware Resume.pdf"
+import SoftwarePDF from "../resources/Software Resume.pdf"
 import { collection, getDocs } from "firebase/firestore"
 import Loading from "./loading"
 
@@ -51,13 +52,13 @@ const Homepage = ({db}) => {
                 </Row>
                 <Row>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Software Resume" border={true}/>
+                        <ResumeLink pdf={SoftwarePDF} name="Software Resume" border={true}/>
                     </Column>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Hardware Resume" border={true} />
+                        <ResumeLink pdf={HardwarePDF} name="Hardware Resume" border={true} />
                     </Column>
                     <Column count={3}>
-                        <ResumeLink pdf={PDF} name="Mechanical Resume" />
+                        <ResumeLink pdf={HardwarePDF} name="Mechanical Resume" />
                     </Column>
                 </Row>
                 {sectionData.length && sortMyData()}

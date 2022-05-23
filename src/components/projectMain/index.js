@@ -1,5 +1,5 @@
 import React from "react"
-import { Column, Row, Heading1, Heading4 } from "../../theme"
+import { Column, Row, Heading4 } from "../../theme"
 
 import { 
     StyledImage,

@@ -6,30 +6,35 @@ import { collection, getDocs } from "firebase/firestore"
 import ProjectMain from "../components/projectMain"
 import ProjectImage from "../components/projectImage"
 
-import sortData from "../resources/utils"
 import Loading from "./loading"
+import { query, orderBy} from "firebase/firestore";  
 
 const Hardware = ({db}) => {
     let [loading, setLoading] = useState(true)
     let [projectData, setProjectData] = useState([])
     let [mainData, setMainData] = useState({})
     let [conclusionData, setConclusionData] = useState({})
-    let [sortedData, setSortData] = useState(false)
-
+    
     useEffect(() => {
+
         const getData = async () => {
-            const querySnapshot = await getDocs(collection(db, "Hardware"))
-            querySnapshot.forEach((doc) => {
+            const q1 = query(collection(db, "Hardware"), orderBy("TopicOrder", "asc"))
+            const topicSnapshot = await getDocs(q1)
+            const q2 = query(collection(db, "Hardware"), orderBy("Order", "asc"));
+            const projectSnapshot = await getDocs(q2)
+
+            topicSnapshot.forEach((doc) => {
                 if(doc.id === "Main"){
                     setMainData(doc.data())
                 }
-                else if(doc.id === "Conclusion"){
+                else{
                     setConclusionData(doc.data())
                 }
-                else{
-                    setProjectData(projectData => [...projectData, doc.data()])
-                }
             })
+            projectSnapshot.forEach((doc) => {
+                setProjectData(projectData => [...projectData, doc.data()])
+            })
+
             setLoading(false)
         }
         getData()
@@ -45,7 +50,6 @@ const Hardware = ({db}) => {
                     <ProjectMain data = {mainData} title={true}/>
                 </Row>
                 <hr />
-                {projectData.length && sortData(sortedData, projectData, setProjectData, setSortData)}
                 {projectData.map((data) => {
                     return(
                         <React.Fragment key={`${data.Title} Project`}>
