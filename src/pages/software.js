@@ -52,7 +52,7 @@ const Software= ({db}) => {
                             <Row>
                                 <ProjectMain data={data} />
                             </Row>
-                            {data.Src && <ProjectImage key={`${data.Title} Images`} src={require(`../images/hardware/${data.Src}.png`)} alt={data.Alt} />}
+                            {data.Src && <ProjectImage key={`${data.Title} Images`} src={require(`../images/software/${data.Src}.png`)} alt={data.Alt} />}
                         </React.Fragment>
                     )
                 })}
