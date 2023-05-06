@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom"
 
-import {Homepage, Software, Hardware, Mechanical, Arcade, NotFound} from "./pages"
+import {Homepage, Software, Hardware, Mechanical, Arcade, NotFound, Draw} from "./pages"
 import GlobalStyle from "./theme"
 import Header from "../src/components/header"
 import Footer from "../src/components/footer"
@@ -28,6 +28,7 @@ function App() {
           <Route path="/Hardware" element={ <Hardware db = {db}/>}></Route>
           <Route path="/Mechanical" element={ <Mechanical db = {db}/>}></Route>
           <Route path="/Arcade" element={ <Arcade />}></Route>
+          <Route path="/Draw" element={ <Draw />}></Route>
           <Route path="/" element={<Homepage db = {db}/>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
