@@ -7,7 +7,8 @@ const colours = {
     darkGrayText: "#202124",
     grayHover: "#2021240a",
     footerBG: "#f8f9fa",
-    imageBG: "#e9edf0"
+    imageBG: "#e9edf0",
+    buttonBG: "light gray"
 }
 
 export default colours
