@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledRow, StyledContainer, StyledButton, StyledColumn, StyledControlButton, ControlColumn } from "./styles"
 import { Column, Row, Heading5} from "../../theme"
-import { collection, getDocs, doc, add } from "firebase/firestore"
+import { getDatabase, ref, set} from "firebase/database"
 
 const controlButtons = ["red", "orange", "yellow", "Chartreuse", "aqua", "violet", "HotPink", "grey", "black", "white"]
 
@@ -20,9 +20,11 @@ const DrawBoard = ({db}) =>{
         event.target.style.backgroundColor = currentColour;
         
         const RGBColour = window.getComputedStyle(document.getElementById(event.target.getAttribute("id"))).backgroundColor;
+        //turns to array of [R,G,B]
         const RGBArray = RGBColour.match(/\d+/g).map(Number);
         RGBArray.unshift(Number(event.target.getAttribute("id")))
         clickedButtons[event.target.getAttribute("id")] = RGBArray
+
     };
 
     const handleInput = (event) => {
@@ -31,14 +33,25 @@ const DrawBoard = ({db}) =>{
 
     const sendToDB = () => {
         clickedButtons = clickedButtons.filter(element => element !== null)
-        let data = JSON.stringify(clickedButtons)
-        db.collection('DrawData').doc("Recent Picture").set({data})
-        .then((docRef) => {
-            console.log('Document written with ID: ', docRef.id);
+        let chosenArray =[]
+        clickedButtons.forEach(element => chosenArray.push(element[0]))
+
+        const data ={
+            num_clicked : clickedButtons.length,
+            tiles: chosenArray
+        }
+
+        //adds js object to data for each tile ex "1": [255,255,255]
+        clickedButtons.forEach(element => data[element[0]] = [element[1], element[2], element[3]] )
+
+        set(ref(db, "tileData"), data)
+        .then(() => {
+            console.log("Data written successfully");
         })
         .catch((error) => {
-            console.error('Error adding document: ', error);
+            console.error("Error writing data:", error);
         });
+
     };
 
     for (let rownum = 0; rownum < rowCount; rownum++) {

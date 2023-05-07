@@ -11,12 +11,14 @@ import Header from "../src/components/header"
 import Footer from "../src/components/footer"
 import firebase from "./firebase"
 import 'firebase/compat/firestore'
+import 'firebase/compat/database'
 
 
 
 
 function App() {
   const db = firebase.firestore()
+  const realtimeDb = firebase.database()
 
   return (
     <>
@@ -28,7 +30,7 @@ function App() {
           <Route path="/Hardware" element={ <Hardware db = {db}/>}></Route>
           <Route path="/Mechanical" element={ <Mechanical db = {db}/>}></Route>
           <Route path="/Arcade" element={ <Arcade />}></Route>
-          <Route path="/Draw" element={ <Draw db = {db}/>}></Route>
+          <Route path="/Draw" element={ <Draw db={realtimeDb}/>}></Route>
           <Route path="/" element={<Homepage db = {db}/>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
