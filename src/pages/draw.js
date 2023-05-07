@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from "react"
-import { PageBody, Column, Row } from "../theme"
+import { PageBody, Column, Row, Heading1 } from "../theme"
 import DrawBoard from "../components/drawBoard"
 
-const Draw = () => {
+const Draw = ({db}) => {
     return(
         <PageBody>
             <Row>
-                <DrawBoard></DrawBoard>
+                <Heading1>Drawing Board</Heading1>
+            </Row>
+            <Row>
+                <DrawBoard db={db}></DrawBoard>
             </Row>
         </PageBody>
     )
