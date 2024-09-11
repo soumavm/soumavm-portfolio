@@ -5,8 +5,8 @@ import { getDatabase, ref, set} from "firebase/database"
 
 const controlButtons = ["red", "orange", "yellow", "Chartreuse", "aqua", "violet", "HotPink", "grey", "black", "white"]
 
-let colCount = 27
-let rowCount = 14
+let colCount = 15
+let rowCount = 17
 let clickedButtons = Array(colCount*rowCount).fill(null);
 
 const DrawBoard = ({db}) =>{
@@ -46,18 +46,35 @@ const DrawBoard = ({db}) =>{
 
         set(ref(db, "tileData"), data)
         .then(() => {
-            console.log("Data written successfully");
+            alert("data sent!");
         })
         .catch((error) => {
-            console.error("Error writing data:", error);
+            alert("Error writing data:", error);
         });
 
     };
 
     for (let rownum = 0; rownum < rowCount; rownum++) {
         for(let colnum = 0; colnum < colCount; colnum++){
+            let keyNum;
+            if(rownum % 2){
+                keyNum = rownum*colCount + colCount - colnum - 1
+            }
+            else{
+                keyNum = colnum + rownum*colCount
+            }
+            keyNum = keyNum + 2*rownum
+
+            if(rownum>=2){
+                keyNum = keyNum - 1
+            }
+            //there's only 300 lights and i'm too lazy to do math
+            if(keyNum > 300){
+                keyNum = 300;
+            }
+
             rowArray.push(<StyledColumn count={colCount}>
-                            <StyledButton onClick={handleButtonClick} key={colnum + rownum*colCount} id={colnum + rownum*colCount}></StyledButton>
+                            <StyledButton onClick={handleButtonClick} key={keyNum} id={keyNum}></StyledButton>
                           </StyledColumn>
                          );
         }
